@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов (простой)»
 
 * Студент: [Аполлинария Бакова](https://up.htmlacademy.ru/react/12/user/34471).
-* Наставник: `Неизвестно`.
+* Наставник: [Andrey Povstyanko](https://htmlacademy.ru/profile/id1754753).
 
 ---
 
