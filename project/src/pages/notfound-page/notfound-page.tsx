@@ -1,24 +1,24 @@
 
 import Header from '../../components/header/header';
 import Svg from '../../components/svg/svg';
-import Main from '../../components/main/main';
 import {Helmet} from 'react-helmet-async';
 
-type AppScreenProps = {
-  placesCount: number;
-}
-
-function MainPage({ placesCount }: AppScreenProps): JSX.Element {
+function NotFoundPage(): JSX.Element {
   return (
     <section className="page page--gray page--main">
       <Helmet>
-        <title>Главная</title>
+        <title>404</title>
       </Helmet>
       <Svg />
       <Header />
-      <Main placesCount={placesCount} />
+      <main className="page__main ">
+        <div className="container">
+          <h1>404 Not found</h1>
+        </div>
+
+      </main>
     </section>
   );
 }
 
-export default MainPage;
+export default NotFoundPage;
