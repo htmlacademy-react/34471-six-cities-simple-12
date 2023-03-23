@@ -1,9 +1,17 @@
-function RoomPropertyName(): JSX.Element {
+import { RoomDetail } from '../../types/types';
+
+type MainPageProps = {
+  allRooms: RoomDetail;
+}
+
+function RoomPropertyName({ allRooms }: MainPageProps): JSX.Element {
+  const { title } = allRooms;
+
   return (
 
     <div className="property__name-wrapper">
       <h1 className="property__name">
-        Beautiful &amp; luxurious studio at great location
+        {title}
       </h1>
     </div>
 

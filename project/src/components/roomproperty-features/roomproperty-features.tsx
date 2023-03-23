@@ -1,15 +1,25 @@
-function RoomPropertyFeatures(): JSX.Element {
+import { RoomDetail } from '../../types/types';
+
+type MainPageProps = {
+
+  allRooms: RoomDetail;
+}
+
+function RoomPropertyFeatures({ allRooms }: MainPageProps): JSX.Element {
+
+  const { roomsamount, roomsguests, roomtype } = allRooms;
+
   return (
 
     <ul className="property__features">
       <li className="property__feature property__feature--entire">
-        Apartment
+        {roomtype}
       </li>
       <li className="property__feature property__feature--bedrooms">
-        3 Bedrooms
+        {roomsamount} Bedrooms
       </li>
       <li className="property__feature property__feature--adults">
-        Max 4 adults
+        Max {roomsguests} adults
       </li>
     </ul>
 

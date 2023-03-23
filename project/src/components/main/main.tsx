@@ -1,11 +1,13 @@
-import Card from '../card/card';
+import OffersList from '../offerslist/offerslist';
 import Locations from '../locations/locations';
+import { RoomDetail } from '../../types/types';
 
 type MainPageProps = {
   placesCount: number;
+  allRooms: RoomDetail[];
 }
 
-function Main({ placesCount }: MainPageProps): JSX.Element {
+function Main({ placesCount, allRooms }: MainPageProps): JSX.Element {
   return (
 
     <main className="page__main page__main--index">
@@ -31,11 +33,8 @@ function Main({ placesCount }: MainPageProps): JSX.Element {
               </ul>
             </form>
             <div className="cities__places-list places__list tabs__content">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <OffersList allRooms={allRooms} />
+
             </div>
           </section>
           <div className="cities__right-section">
@@ -44,8 +43,6 @@ function Main({ placesCount }: MainPageProps): JSX.Element {
         </div>
       </div>
     </main>
-
-
   );
 }
 
