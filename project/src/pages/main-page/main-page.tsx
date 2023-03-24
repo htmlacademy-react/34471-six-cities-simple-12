@@ -3,14 +3,15 @@ import Header from '../../components/header/header';
 import Svg from '../../components/svg/svg';
 import Main from '../../components/main/main';
 import {Helmet} from 'react-helmet-async';
-import {RoomDetail} from '../../types/types';
+import {RoomDetail, City} from '../../types/types';
 
 type AppScreenProps = {
   placesCount: number;
   allRooms: RoomDetail[];
+  city: City;
 }
 
-function MainPage({ placesCount, allRooms }: AppScreenProps): JSX.Element {
+function MainPage({ placesCount, allRooms, city }: AppScreenProps): JSX.Element {
   return (
     <section className="page page--gray page--main">
       <Helmet>
@@ -18,7 +19,7 @@ function MainPage({ placesCount, allRooms }: AppScreenProps): JSX.Element {
       </Helmet>
       <Svg />
       <Header />
-      <Main placesCount={placesCount} allRooms={allRooms} />
+      <Main placesCount={placesCount} allRooms={allRooms} city={city} />
     </section>
   );
 }

@@ -20,7 +20,7 @@ function RoomPropertyReviews({ allRooms }: MainPageProps): JSX.Element {
 
 
       {reviews.map((item) => (
-        <li key={`${item.id}`} className="reviews__item">
+        <li key={item.avatar} className="reviews__item">
           <div className="reviews__user user">
             <div className="reviews__avatar-wrapper user__avatar-wrapper">
               <img className="reviews__avatar user__avatar" src={item.avatar} width="54" height="54" alt="Reviews avatar" />
