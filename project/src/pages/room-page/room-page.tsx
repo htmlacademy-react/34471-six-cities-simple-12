@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { RoomDetail } from '../../types/types';
 
 type AppScreenProps = {
-  allRooms: RoomDetail;
+  allRooms: RoomDetail[];
 }
 
 function RoomPage({ allRooms }: AppScreenProps): JSX.Element {

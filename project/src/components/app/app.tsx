@@ -6,7 +6,7 @@ import RoomPage from '../../pages/room-page/room-page';
 import NotFoundPage from '../../pages/notfound-page/notfound-page';
 import PrivateRoute from '../private-router/private-router';
 import { HelmetProvider } from 'react-helmet-async';
-import {RoomDetail} from '../../types/types';
+import { RoomDetail } from '../../types/types';
 
 type AppScreenProps = {
   placesCount: number;
@@ -32,7 +32,7 @@ function App({ placesCount, allRooms }: AppScreenProps): JSX.Element {
           />
           <Route
             path={AppRoute.Room}
-            element={<RoomPage allRooms={allRooms[0]} />}
+            element={<RoomPage allRooms={allRooms} />}
           />
 
           <Route

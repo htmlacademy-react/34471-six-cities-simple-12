@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import RoomPropertyFeatures from '../roomproperty-features/roomproperty-features';
 import RoomPropertyHost from '../roomproperty-host/roomproperty-host';
 import RoomPropertyInside from '../roomproperty-inside/roomproperty-inside';
@@ -11,12 +12,16 @@ import RoomMap from '../roommap/roommap';
 import { RoomDetail } from '../../types/types';
 
 type MainPageProps = {
-  allRooms: RoomDetail;
+  allRooms: RoomDetail[];
 }
 
 function Room({ allRooms }: MainPageProps): JSX.Element {
 
-  const {isPremium, images } = allRooms;
+  const { id } = useParams<string>();
+
+  const currentRoom = allRooms.find((room) => room.id === Number(id)) as RoomDetail;
+
+  const { isPremium, images, reviews } = currentRoom;
 
   return (
     <main className="page__main page__main--property">
@@ -52,9 +57,9 @@ function Room({ allRooms }: MainPageProps): JSX.Element {
             <RoomPropertyHost allRooms={allRooms} />
 
             <section className="property__reviews reviews">
-              <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{allRooms.reviews.length}</span></h2>
+              <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
               <RoomPropertyReviews allRooms={allRooms} />
-              <RoomPropertyForm allRooms={allRooms} />
+              <RoomPropertyForm />
             </section>
 
           </div>

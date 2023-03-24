@@ -1,13 +1,18 @@
+import { useParams } from 'react-router-dom';
 import { RoomDetail } from '../../types/types';
 
 type MainPageProps = {
 
-  allRooms: RoomDetail;
+  allRooms: RoomDetail[];
 }
 
 function RoomPropertyFeatures({ allRooms }: MainPageProps): JSX.Element {
 
-  const { roomsamount, roomsguests, roomtype } = allRooms;
+  const { id } = useParams<string>();
+
+  const currentRoom = allRooms.find((room) => room.id === Number(id)) as RoomDetail;
+
+  const { roomsamount, roomsguests, roomtype } = currentRoom;
 
   return (
 

@@ -1,13 +1,18 @@
+import { useParams } from 'react-router-dom';
 import { RoomDetail } from '../../types/types';
 
 type MainPageProps = {
 
-  allRooms: RoomDetail;
+  allRooms: RoomDetail[];
 }
 
 function RoomPropertyInside({ allRooms }: MainPageProps): JSX.Element {
 
-  const { items } = allRooms;
+  const { id } = useParams<string>();
+
+  const currentRoom = allRooms.find((room) => room.id === Number(id)) as RoomDetail;
+
+  const { items } = currentRoom;
 
   return (
 
@@ -16,10 +21,9 @@ function RoomPropertyInside({ allRooms }: MainPageProps): JSX.Element {
       <ul className="property__inside-list">
 
 
-        {items.map((item, id) => (
+        {items.map((item) => (
 
-
-          <li key={`${id * 100}`} className="property__inside-item">
+          <li key={item} className="property__inside-item">
             {item}
           </li>
 

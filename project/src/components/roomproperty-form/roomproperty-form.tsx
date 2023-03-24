@@ -1,13 +1,9 @@
 import { useState, FormEvent, ChangeEvent, Fragment } from 'react';
-import { RoomDetail } from '../../types/types';
+
 const stars = [5, 4, 3, 2, 1];
-type MainPageProps = {
-  allRooms: RoomDetail;
-};
 
-function RoomPropertyForm({ allRooms }: MainPageProps): JSX.Element {
+function RoomPropertyForm(): JSX.Element {
 
-  const { reviews, id } = allRooms;
   const [userAnswers, setUserAnswers] = useState(['', '']);
 
   return (
@@ -18,17 +14,6 @@ function RoomPropertyForm({ allRooms }: MainPageProps): JSX.Element {
       method="post"
       onSubmit={(evt: FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
-        reviews.push(
-          {
-            id: allRooms.reviews.length,
-            roomid: id,
-            avatar: '',
-            name: '',
-            date: ['', 0],
-            rating: Number(userAnswers[0]),
-            text: userAnswers[1]
-          }
-        );
 
       }}
     >
