@@ -23,7 +23,10 @@ function Main(props: MainPageProps): JSX.Element {
 
   //  setSelectedPoint(undefined);
   //};
-  setSelectedPoint(undefined);
+  if(selectedPoint) {
+    setSelectedPoint(undefined);
+  }
+
 
   return (
 
