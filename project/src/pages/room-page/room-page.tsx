@@ -1,10 +1,15 @@
-
 import Header from '../../components/header/header';
 import Svg from '../../components/svg/svg';
 import Room from '../../components/room/room';
-import {Helmet} from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
+import { RoomDetail } from '../../types/types';
 
-function RoomPage(): JSX.Element {
+type AppScreenProps = {
+  allRooms: RoomDetail[];
+}
+
+function RoomPage({ allRooms }: AppScreenProps): JSX.Element {
+
   return (
     <div className="page">
       <Helmet>
@@ -12,7 +17,7 @@ function RoomPage(): JSX.Element {
       </Helmet>
       <Svg />
       <Header />
-      <Room />
+      <Room allRooms={allRooms} />
     </div>
   );
 }
