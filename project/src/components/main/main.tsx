@@ -1,13 +1,33 @@
+import React, { useState } from 'react';
 import OffersList from '../offerslist/offerslist';
 import Locations from '../locations/locations';
-import { RoomDetail } from '../../types/types';
+import Map from '../map/map';
+import { RoomDetail, City, Point } from '../../types/types';
 
 type MainPageProps = {
   placesCount: number;
   allRooms: RoomDetail[];
+  city: City;
 }
 
-function Main({ placesCount, allRooms }: MainPageProps): JSX.Element {
+function Main(props: MainPageProps): JSX.Element {
+
+  const { placesCount, allRooms, city } = props;
+
+  const [selectedPoint, setSelectedPoint] = useState<Point | undefined>(
+    undefined
+  );
+
+  //const onListItemHover = (listItemName: string) => {
+  //  const currentPoint = allRooms.find((point) => point.location.title === listItemName);
+
+  //  setSelectedPoint(undefined);
+  //};
+  if(selectedPoint) {
+    setSelectedPoint(undefined);
+  }
+
+
   return (
 
     <main className="page__main page__main--index">
@@ -38,7 +58,7 @@ function Main({ placesCount, allRooms }: MainPageProps): JSX.Element {
             </div>
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map"></section>
+            <Map city={city} allRooms={allRooms} selectedPoint={selectedPoint} />
           </div>
         </div>
       </div>

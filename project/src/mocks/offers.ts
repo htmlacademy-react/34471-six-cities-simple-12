@@ -1,9 +1,22 @@
-import { RoomDetail } from '../types/types';
+import { RoomDetail, City } from '../types/types';
+
+export const CITY: City = {
+  title: 'Амстердам',
+  lat: 52.370216,
+  lng: 4.895168,
+  zoom: 10
+};
+
 
 export const rooms: RoomDetail[] = [
   {
 
     id: 1,
+    location: {
+      title: '1',
+      lat: 52.3909553943508,
+      lng: 4.85309666406198,
+    },
     img: 'img/apartment-01.jpg',
     isPremium: true,
     price: 120,
@@ -34,7 +47,7 @@ export const rooms: RoomDetail[] = [
     },
     reviews: [
       {
-        id: 1,
+        reviewId: 1,
         roomid: 1,
         avatar: 'img/avatar-max.jpg',
         name: 'Max',
@@ -44,7 +57,7 @@ export const rooms: RoomDetail[] = [
 
       },
       {
-        id: 2,
+        reviewId: 2,
         roomid: 1,
         avatar: 'img/avatar-angelina.jpg',
         name: 'Ангелина',
@@ -60,6 +73,11 @@ export const rooms: RoomDetail[] = [
   {
 
     id: 2,
+    location: {
+      title: '2',
+      lat: 52.3609553943508,
+      lng: 4.85309666406198,
+    },
     img: 'img/apartment-02.jpg',
     isPremium: false,
     price: 80,
@@ -90,7 +108,7 @@ export const rooms: RoomDetail[] = [
     },
     reviews: [
       {
-        id: 1,
+        reviewId: 1,
         roomid: 1,
         avatar: 'img/avatar-max.jpg',
         name: 'Max',
@@ -100,7 +118,7 @@ export const rooms: RoomDetail[] = [
 
       },
       {
-        id: 2,
+        reviewId: 2,
         roomid: 1,
         avatar: 'img/avatar-angelina.jpg',
         name: 'Ангелина',
@@ -116,6 +134,11 @@ export const rooms: RoomDetail[] = [
   {
 
     id: 3,
+    location: {
+      title: '3',
+      lat: 52.3909553943508,
+      lng: 4.929309666406198,
+    },
     img: 'img/apartment-03.jpg',
     isPremium: true,
     price: 150,
@@ -146,7 +169,7 @@ export const rooms: RoomDetail[] = [
     },
     reviews: [
       {
-        id: 1,
+        reviewId: 1,
         roomid: 1,
         avatar: 'img/avatar-max.jpg',
         name: 'Max',
@@ -156,7 +179,7 @@ export const rooms: RoomDetail[] = [
 
       },
       {
-        id: 2,
+        reviewId: 2,
         roomid: 1,
         avatar: 'img/avatar-angelina.jpg',
         name: 'Ангелина',
@@ -172,6 +195,11 @@ export const rooms: RoomDetail[] = [
   {
 
     id: 4,
+    location: {
+      title: '4',
+      lat: 52.3809553943508,
+      lng: 4.939309666406198,
+    },
     img: 'img/apartment-01.jpg',
     isPremium: false,
     price: 100,
@@ -203,7 +231,7 @@ export const rooms: RoomDetail[] = [
     },
     reviews: [
       {
-        id: 1,
+        reviewId: 1,
         roomid: 4,
         avatar: 'img/avatar-max.jpg',
         name: 'Max',
@@ -213,7 +241,7 @@ export const rooms: RoomDetail[] = [
 
       },
       {
-        id: 2,
+        reviewId: 2,
         roomid: 4,
         avatar: 'img/avatar-angelina.jpg',
         name: 'Ангелина',

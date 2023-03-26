@@ -1,7 +1,7 @@
 export type RoomType = 'Apartment' | 'Room' | 'House' | 'Hotel';
 
 export type Review = {
-  id: number;
+  reviewId: number;
   roomid: number;
   avatar: string;
   name: string;
@@ -11,8 +11,22 @@ export type Review = {
 
 };
 
+export type Point = {
+  title: string;
+  lat: number;
+  lng: number;
+};
+
+export type City = {
+  title: string;
+  lat: number;
+  lng: number;
+  zoom: number;
+};
+
 export type RoomDetail = {
   id: number;
+  location: Point;
   img: string;
   isPremium: boolean;
   price: number;
@@ -32,5 +46,3 @@ export type RoomDetail = {
   };
   reviews: Review[];
 };
-
-
